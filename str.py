@@ -70,7 +70,7 @@ print("S" not in str2)
 # formating(서식) - tuple
 f = "name => %s, age => %d"
 print(f)
-print(f % ('둘리', 10))
+print("name => %s, age => %d" % ('둘리', 10))
 print(f % ('또치', 20))
 
 # formating(서식) - format() 함수
@@ -95,6 +95,91 @@ print(s.find("Like"))
 print(s.find("Like", 5))
 print(s.find("JavaScript"))
 print(s.rfind("Like"))
+
+# 발견하지 못하면 예외가 발생한다.
+# print(s.index("JavaScript"))
+print(s.rindex("Like"))
+print(s.startswith('I Like'))
+print(s.startswith('I Like', 2))
+print(s.endswith('Also'))
+print(s.endswith('Java', 0, 26))
+
+# 편집과 치환
+s = '      spam and ham      '
+print('---' + s.strip() + '---')
+print('---' + s.rstrip() + '---')
+print('---' + s.lstrip() + '---')
+
+s = '<><abc><><defg><>'
+print('---' + s.strip('<>') + '---')
+
+s = 'Hello Java Java Java'
+print(s.replace('Java', 'Python'))
+
+# 정렬
+s = 'King and Queen'
+print('---' + s.center(30) + '---')
+print('---' + s.ljust(30) + '---')
+print('---' + s.rjust(30) + '---')
+
+# 분리
+s = 'spam and ham'
+r = s.split(' and ')
+print(r, type(r))
+
+s = 'one:two:three:four'
+r = s.split(':')
+print(r)
+
+r = s.split(':', 2)
+print(r)
+
+r = s.rsplit(':', 2)
+print(r)
+
+lines = """1st line
+2nd line
+3rd line
+4th line
+"""
+r = lines.split('\n')
+print(r)
+r = lines.splitlines()
+print(r)
+
+# 결합
+s = '&'.join(r)
+print(s)
+
+# 판별
+print("1234".isdigit())
+print("abcd".isalpha())
+print("1234".isalpha())
+print("abcd".isdigit())
+print("abcdef".islower())
+print("ABCDEF".isupper())
+print(" ".isspace())
+print("".isspace())
+print("\n".isspace())
+print("\t".isspace())
+
+# '0' 채우기
+print(str(1).zfill(5))
+print(str(9234).zfill(5))
+
+# formating(서식)
+print("name:{}, age:{}".format("둘리", 10))
+print("name:{0}, age:{1}".format("둘리", 10))
+print("name:{1}, age:{0}".format(10, "둘리"))
+
+f = "name:{n}, age:{a}"
+s = f.format_map({"n": "둘리", "a": 10})
+print(s)
+
+
+
+
+
 
 
 
